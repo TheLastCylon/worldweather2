@@ -1,31 +1,29 @@
-# worldweather2
+# worldweather
 ## Welcome to the World Weather App.
 This is a quick and dirty demonstration of using Django to provide a rest-full API.
 The application grabs weather data from a provider site, which is then manipulated and formed for our purposes.
 Although we have access to incredibly detailed data via our provider, we only use the humidity and temperature data-points for this demonstration.
-A few things to note about the API this app provides:
-<ul>
-   <li>All testing was done with Python 3.5</li>
-   <li>All interfaces are accessed via GET operation.</li>
-   <li>All interfaces require three parameters:
-      <ol>
-         <li><b>city</b> - A valid city name</li>
-         <li><b>start date</b> - A date in the form YYYY-MM-DD</li>
-         <li><b>end date</b> - A date in the form YYYY-MM-DD</li>
-      </ol>
-      <p>These parameters are provided to the API via dynamic URL in the form:<br><br>
-         <code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b></code>
-      </p>
-      <p>Note that <b>end-date</b> must be a date that falls after <b>start-date</b> and that the two dates may not be more than <b>31</b> days apart.<br> This limitation is on the part of the data provider.</p>
-   </li>
-   </ul>
-</p>
 
-<h2>The API</h2>
-<p>The provided API can be broken into two groups: Temperature and Humidity.</p>
-<h3>Temperature</h3>
-<ul>
-<li><h4>All Temperature data</h4>
+### A few things to note about the API this app provides:
+- All testing was done with Python 3.5
+- All interfaces are accessed via GET operation.</li>
+- All interfaces require three parameters:
+
+| Field          | Description                   |
+| -------------- | ----------------------------- |
+| **city**       | A valid city name             |
+| **start date** | A date in the form YYYY-MM-DD |
+| **end date**   | A date in the form YYYY-MM-DD |
+
+These parameters are provided to the API via dynamic URL in the form: ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]```
+
+Note that **end-date** must be a date that falls after **start-date** and that the two dates may not be more than **31** days apart.
+This limitation is on the part of the data provider.
+
+## The API
+The provided API can be broken into two groups: Temperature and Humidity.
+### Temperature
+#### All Temperature data
 <table>
    <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature</code></td></tr>
    <tr class="row2"><td class="head">Returns</td><td><code>all temperature data, for specified period</code></td></tr>
