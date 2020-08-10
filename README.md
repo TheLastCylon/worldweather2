@@ -24,21 +24,22 @@ This limitation is on the part of the data provider.
 The provided API can be broken into two groups: Temperature and Humidity.
 ### Temperature
 #### All Temperature data
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>all temperature data, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "temperature": { "minimum": 16.0, "maximum": 29.0, "average": 21.419354838709676, "median": 21.0 } }</code></td></tr>
-</table>
-</li>
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/temperature``` |
+| Returns | ```all temperature data, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature``` |
+| Result  | ```{ "temperature": { "minimum": 16.0, "maximum": 29.0, "average": 21.419354838709676, "median": 21.0 } }``` |
+
 
 <!-- ========================================================================================================================= -->
-<li><h4>Minimum</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature/min</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>minimum temperature, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/min</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "temperature": { "minimum": 16.0 } }</code></td></tr>
+### Minimum
+| | |
+| --- | --- |
+| Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature/min</code></td></tr>
+| Returns</td><td><code>minimum temperature, for specified period</code></td></tr>
+| Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/min</code></td></tr>
+| Result </td><td><code>{ "temperature": { "minimum": 16.0 } }</code></td></tr>
 </table>
 </li>
 
