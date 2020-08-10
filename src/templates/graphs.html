@@ -1,0 +1,92 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
+
+{{ graph_data|json_script:"graph_data" }} <!-- Done this way to prevent HTML injection -->
+
+<h1>Graphs</h1>
+<ul>
+    <li><p>Temperature</p><canvas id="temperature" width="600" height="400"></canvas></li>
+    <li><p>Humidity   </p><canvas id="humidity"    width="600" height="400"></canvas></li>
+</ul>
+
+<script>
+function build_sorted_data(dict)
+{
+    retval          = {};
+    date_list       = [];
+    retval['dates'] = [];
+    retval['tmin']  = [];
+    retval['tmax']  = [];
+    retval['hmin']  = [];
+    retval['hmax']  = [];
+
+    for (var key in dict['weather_data']) {
+        retval['dates'].push(key);
+    }
+    retval['dates'].sort();
+
+    retval['dates'].forEach(key => {
+        retval['tmin'].push(dict['weather_data'][key]['temperature']['min']);
+        retval['tmax'].push(dict['weather_data'][key]['temperature']['max']);
+        retval['hmin'].push(dict['weather_data'][key]['humidity']   ['min']);
+        retval['hmax'].push(dict['weather_data'][key]['humidity']   ['max']);
+    });
+
+    return retval;
+}
+
+var graph_data        = JSON.parse(document.getElementById('graph_data').textContent);
+var graph_data        = JSON.parse(graph_data);
+var sorted_graph_data = build_sorted_data(graph_data);
+console.log('Sorted graph data:' + sorted_graph_data)
+
+var temperature_canvas = document.getElementById('temperature');
+var temperature_graph  = new Chart(temperature_canvas, {
+        type: 'bar',
+        data: {
+            labels  : sorted_graph_data['dates'],
+            datasets: [{
+                label          : "Minimum",
+                data           : sorted_graph_data['tmin'],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor    : 'rgba(54, 162, 235, 1)',
+                borderWidth    : 1
+            },
+            {
+                label          : "Maximim",
+                data           : sorted_graph_data['tmax'],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor    : 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive : false,
+        }
+    });
+
+var humidity_canvas = document.getElementById('humidity');
+var humidity_graph  = new Chart(humidity_canvas, {
+        type: 'bar',
+        data: {
+            labels  : sorted_graph_data['dates'],
+            datasets: [{
+                label          : "Minimum",
+                data           : sorted_graph_data['hmin'],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor    : 'rgba(54, 162, 235, 1)',
+                borderWidth    : 1
+            },
+            {
+                label          : "Maximim",
+                data           : sorted_graph_data['hmax'],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor    : 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive : false,
+        }
+    });
+
+</script>
