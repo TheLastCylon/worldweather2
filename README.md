@@ -31,125 +31,99 @@ The provided API can be broken into two groups: Temperature and Humidity.
 | Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature``` |
 | Result  | ```{ "temperature": { "minimum": 16.0, "maximum": 29.0, "average": 21.419354838709676, "median": 21.0 } }``` |
 
-
-<!-- ========================================================================================================================= -->
-### Minimum
+#### Minimum
 | | |
 | --- | --- |
-| Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature/min</code></td></tr>
-| Returns</td><td><code>minimum temperature, for specified period</code></td></tr>
-| Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/min</code></td></tr>
-| Result </td><td><code>{ "temperature": { "minimum": 16.0 } }</code></td></tr>
-</table>
-</li>
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/temperature/min``` |
+| Returns | ```minimum temperature, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/min``` |
+| Result  | ```{ "temperature": { "minimum": 16.0 } }``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Maximum</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature/max</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>maximum temperature, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/max</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "temperature": { "maximum": 29.0 } }</code></td></tr>
-</table>
-</li>
+#### Maximum
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/temperature/max``` |
+| Returns | ```maximum temperature, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/max``` |
+| Result  | ```{ "temperature": { "maximum": 29.0 } }``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Average</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature/average</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>average temperature, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/average</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "temperature": { "average": 21.419354838709676 } }</code></td></tr>
-</table>
-</li>
+#### Average
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/temperature/average``` |
+| Returns | ```average temperature, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/average``` |
+| Result  | ```{ "temperature": { "average": 21.419354838709676 } }``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Median</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/temperature/median</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>median temperature, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/median</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "temperature": { "median": 21.0 } }</code></td></tr>
-</table>
-</li>
-</ul>
-<!-- ========================================================================================================================= -->
+#### Median
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/temperature/median``` |
+| Returns | ```median temperature, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/temperature/median``` |
+| Result  | ```{ "temperature": { "median": 21.0 } }``` |
 
-<h3>Humidity</h3>
-<ul>
-<li><h4>All Humidity data</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/humidity</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>all humidity data, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "humidity": { "minimum": 36.0, "maximum": 90.0, "average": 68.58467741935483, "median": 70.0 } }</code></td></tr>
-</table>
-</li>
+### Humidity
+#### All Humidity data
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/humidity``` |
+| Returns | ```all humidity data, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity``` |
+| Result  | ```{ "humidity": { "minimum": 36.0, "maximum": 90.0, "average": 68.58467741935483, "median": 70.0 } }``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Minimum</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/humidity/min</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>minimum humidity, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/min</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "humidity": { "minimum": 36.0 } }</code></td></tr>
-</table>
-</li>
+#### Minimum
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/humidity/min``` |
+| Returns | ```minimum humidity, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/min``` |
+| Result  | ```{ "humidity": { "minimum": 36.0 } ``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Maximum</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/humidity/max</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>maximum humidity, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/max</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "humidity": { "maximum": 90.0 } }</code></td></tr>
-</table>
-</li>
+#### Maximum
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/humidity/max``` |
+| Returns | ```maximum humidity, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/max``` |
+| Result  | ```{ "humidity": { "maximum": 90.0 } ``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Average</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/humidity/average</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>average humidity, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/average</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "humidity": { "average": 68.58467741935483 } }</code></td></tr>
-</table>
-</li>
+#### Average
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/humidity/average``` |
+| Returns | ```average humidity, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/average``` |
+| Result  | ```{ "humidity": { "average": 68.58467741935483 } ``` |
 
-<!-- ========================================================================================================================= -->
-<li><h4>Median</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/humidity/median</code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>median humidity, for specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/median</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "humidity": { "median": 70.0 } }</code></td></tr>
-</table>
-</li>
-</ul>
+#### Median
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/humidity/median``` |
+| Returns | ```median humidity, for specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/humidity/median``` |
+| Result  | ```{ "humidity": { "median": 70.0 } ``` |
 
-<!-- ========================================================================================================================= -->
-<h3>Feeling Greedy?</h3>
-<ul>
-<li><h4>Get everything</h4>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b></code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>all temperature and humidity data, for the specified period</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31</code></td></tr>
-   <tr class="row2"><td class="head">Result </td><td><code>{ "temperature": { "minimum": 16.0, "maximum": 29.0, "average": 21.419354838709676, "median": 21.0 }, "humidity": { "minimum": 36.0, "maximum": 90.0, "average": 68.58467741935483, "median": 70.0 } }</code></td></tr>
-</table>
-</li>
-</ul>
+### Feeling Greedy?
+#### Get everything
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE``` |
+| Returns | ```all temperature and humidity data, for the specified period``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31``` |
+| Result  | ```{ "temperature": { "minimum": 16.0, "maximum": 29.0, "average": 21.419354838709676, "median": 21.0 }, "humidity": { "minimum": 36.0, "maximum": 90.0, "average": 68.58467741935483, "median": 70.0 } ``` |
 
-<h3>Dealing with errors</h3>
-<p>All API errors will be reported as in the example below.</p>
-<table>
-   <tr class="row1"><td class="head">Result</td><td><code>{"error": "Date values must be provided in YYYY-MM-DD format!"}</code></td></tr>
-</table>
+### Dealing with errors
+All API errors will be reported as in the example below.
+| | |
+| --- | --- |
+| Result | ```{"error": "Date values must be provided in YYYY-MM-DD format``` |
 
-<h3>Graphs</h3>
-<p>You can see some rather nice maximum/minimum graphs for the period you specified by using</p>
-<table>
-   <tr class="row1"><td class="head">Request</td><td><code>/wwapi/<b>[CITY-NAME]</b>/<b>[START-DATE]</b>/<b>[END-DATE]</b>/graphs</b></code></td></tr>
-   <tr class="row2"><td class="head">Returns</td><td><code>See the data in neat graphs :)</code></td></tr>
-   <tr class="row1"><td class="head">Example</td><td><code>http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/graphs</code></td></tr>
-</table>
+### Graphs
+You can see some rather nice maximum/minimum graphs for the period you specified by using
+| | |
+| --- | --- |
+| Request | ```/wwapi/[CITY-NAME]/[START-DATE]/[END-DATE]/graphs``` |
+| Returns | ```See the data in neat graphs ``` |
+| Example | ```http://localhost:8000/wwapi/Cape%20Town/2020-01-01/2020-01-31/graphs``` |
+
